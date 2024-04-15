@@ -1,24 +1,54 @@
 function calculateLoanPrediction() {
-    const nbfcName = document.getElementById("nbfcName").value;
-    const interestRate = parseFloat(document.getElementById("interestRate").value);
-    const repaymentTime = parseInt(document.getElementById("repaymentTime").value);
-    const accessPhotosContacts = parseInt(document.getElementById("accessPhotosContacts").value);
-    const loanAmount = parseFloat(document.getElementById("loanAmount").value);
-    const repaymentDuration = parseInt(document.getElementById("repaymentDuration").value);
+  const data = {
+    rating: 0,
+    access_photos: 0,
+    access_contacts: 0,
+    less_than_30_days: 0,
+    between_30_and_660_days: 0,
+    above_rbi_limit_interest_rate: 0,
+    points: 0
+  };
 
-    // Your logic code goes here
-    // You can use the variables above to simulate user inputs and calculate the loan prediction
+  // Add logic code here
+// Assuming 'data' is already loaded into a JavaScript object
+// Add placeholders for other features
+data['rating'] = 0;
+data['access_photos'] = 0;
+data['access_contacts'] = 0;
+data['less_than_30_days'] = 0;
+data['between_30_and_660_days'] = 0;
+data['above_rbi_limit_interest_rate'] = 0;
 
-    // For demonstration, let's assume the totalPoints and recommendation are calculated
-    let totalPoints = 0; // Calculate total points
-    let recommendation = "";
-    if (totalPoints >= 4) {
-        recommendation = "The deal is good, you should take the loan.";
-    } else if (totalPoints >= 2) {
-        recommendation = "Our prediction tells us this is not the best for you, try to find a better deal.";
-    } else {
-        recommendation = "This deal is very sketchy, try to avoid it.";
-    }
+// Calculate points based on additional conditions
+data['points'] = 0;
+data['points'] += (data['above_rbi_limit_interest_rate'] <= 30 && data['above_rbi_limit_interest_rate'] >= 2) ? 1 : 0;
+data['points'] -= (data['above_rbi_limit_interest_rate'] > 30 || data['above_rbi_limit_interest_rate'] < 2) ? 1 : 0;
 
-    document.getElementById("result").innerText = recommendation;
+// Get user input for NBFC name (Assuming you have a function to get user input)
+var nbf_name = prompt("Enter the NBFC name:");
+
+// Check if the NBFC name is present in the dataset
+if (data['NBFC Name'].includes(nbf_name)) {
+  console.log("NBFC name found in the list. Adding 3 points.");
+  data['points'] += 3;
+} else {
+  console.log("NBFC name not found in the list. Deducting 3 points.");
+  data['points'] -= 3;
+}
+
+// Similarly, convert the remaining user inputs and conditions to JavaScript
+// Print the deal recommendation based on 'total_points'
+
+  const total_points = data.points;
+  let recommendation = "";
+  if (total_points >= 4) {
+    recommendation = "The deal is good, you should take the loan.";
+  } else if (total_points >= 2) {
+    recommendation = "Our prediction tells us this is not the best for you, try to find a better deal.";
+  } else {
+    recommendation = "This deal is very sketchy, try to avoid it.";
+  }
+
+  // Display recommendation
+  document.getElementById("recommendation").innerHTML = recommendation;
 }
