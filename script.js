@@ -1,3 +1,37 @@
+// Load data from a local CSV file
+fetch('path/to/your/csv/file.csv')
+  .then(response => response.text())
+  .then(csvData => {
+    // Parse the CSV data into a JavaScript object
+    const data = parseCsvData(csvData);
+
+    // Now you can execute your existing code with the loaded data
+    data['rating'] = 0;
+    data['access_photos'] = 0;
+    // Add the rest of your existing code here...
+  })
+  .catch(error => {
+    console.error('Error loading data:', error);
+  });
+
+// Function to parse CSV data into a JavaScript object
+function parseCsvData(csvData) {
+  // Implement your CSV parsing logic here
+  // This is a basic example assuming CSV has header row and comma-separated values
+  const lines = csvData.split('\n');
+  const headers = lines[0].split(',');
+  const data = [];
+  for (let i = 1; i < lines.length; i++) {
+    const values = lines[i].split(',');
+    const row = {};
+    for (let j = 0; j < headers.length; j++) {
+      row[headers[j]] = values[j];
+    }
+    data.push(row);
+  }
+  return data;
+}
+
 function calculateLoanPrediction() {
   const data = {
     rating: 0,
