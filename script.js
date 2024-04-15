@@ -1,5 +1,5 @@
 // Load data from a local CSV file
-fetch('path/to/your/csv/file.csv')
+fetch('https://github.com/Magenta91/Quick-Loan-legi.-Prediction/blob/main/NBFCsandARCs10012023%20(1).csv')
   .then(response => response.text())
   .then(csvData => {
     // Parse the CSV data into a JavaScript object
