@@ -1,15 +1,15 @@
-name: [Name of your dataset]
-description: [Describe your dataset here]
+name: [NBFCsandARCs10012023 (1) (1)]
+description: [it consist data of company that are elgible for banking]
 contributors:
-- name: [Name of the the first contributor]
+- name: [Lokesh kumar]
 data:
-- name: [name of your data file, optional]
+- name: [NBFCsandARCs10012023 (1) (1)]
   description: [description of your data file, optional]
-  path: [path_to_your_data_file.csv]
+  path: [dataset/NBFCsandARCs10012023 (1) (1).csv]
   format: csv
-  size: [size of your data file]
+  size: [1.64MB]
   fields:
-  - name: [name of the first colomn]
-    description: [description of the first column]
-  - name: [name of the second colomn]
-    description: [description of the second column]
+  - name: [SR No.]
+    description: [basic serial no. of rows]
+  - name: [NBFC NAME]
+    description: [Main dataset file using for checking if company is valid or not]
