@@ -1,5 +1,5 @@
 // Define the path to your CSV file (update this with the actual location)
-const csvFilePath = 'https://raw.githubusercontent.com/Magenta91/Quick-Loan-legi.-Prediction/main/dataset/NBFCsandARCs10012023%20(1)%20(1).csv';
+const csvFilePath = 'dataset/NBFCsandARCs10012023 (1) (1).csv';
 
 function calculateLoanPrediction() {
   const data = {
