@@ -1,5 +1,5 @@
 // Define the path to your CSV file (update this with the actual location)
-const csvFilePath = 'dataset/NBFCsandARCs10012023 (1) (1).csv';
+const csvFilePath = 'https://raw.githubusercontent.com/Magenta91/Quick-Loan-legi.-Prediction/main/dataset/NBFCsandARCs10012023%20(1)%20(1).csv';
 
 function calculateLoanPrediction() {
   const data = {
@@ -54,4 +54,28 @@ function calculateLoanPrediction() {
   }
 
   // Calculate points based on access to photos/contacts
-  data['points'] += (accessPhotosContacts === 
+  data['points'] += (accessPhotosContacts === 0) ? -1 : 0;  // Deduct a point if access is requested
+
+  // ... rest of your code ... (e.g., displaying recommendation)
+}
+
+// Load data from a local CSV file
+fetch(csvFilePath) // Use the defined path here
+  .then(response => response.text())
+  .then(csvData => {
+    // Parse the CSV data into a JavaScript object
+    const data = parseCsvData(csvData);
+
+    // Now you can execute your existing code with the loaded data
+    data['rating'] = 0;
+    data['access_photos'] = 0;
+    // Add the rest of your existing code here...
+  })
+  .catch(error => {
+    console.error('Error loading data:', error);
+  });
+
+// Function to parse CSV data into a JavaScript object
+function parseCsvData(csvData) {
+  // Implement your CSV parsing logic here
+  // This is a basic example assuming CSV has header row and comma-separated values
