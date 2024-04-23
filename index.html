@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Loan Prediction</title>
-    <script src="script.js"></script>
+  <title>Loan Prediction</title>
+  <script src="script.js"></script>
 </head>
 <body>
-    <h1>Loan Prediction</h1>
-    <label for="nbfcName">NBFC Name:</label>
-    <input type="text" id="nbfcName"><br><br>
-    <label for="interestRate">Interest Rate:</label>
-    <input type="number" id="interestRate"><br><br>
-    <label for="repaymentTime">Repayment Time (in days):</label>
-    <input type="number" id="repaymentTime"><br><br>
-    <label for="accessPhotosContacts">Access to Photos and Contacts (0 for Yes, 1 for No):</label>
-    <input type="number" id="accessPhotosContacts"><br><br>
-    <label for="loanAmount">Loan Amount:</label>
-    <input type="number" id="loanAmount"><br><br>
-    <label for="repaymentDuration">Repayment Duration (in days):</label>
-    <input type="number" id="repaymentDuration"><br><br>
-    <button onclick="calculateLoanPrediction()">Calculate</button><br><br>
-    <p id="result"></p>
+  <h1>Loan Prediction</h1>
+  <label for="nbfcName">NBFC Name:</label>
+  <input type="text" id="nbfcName"><br><br>
+  <label for="interestRate">Interest Rate (%):</label>
+  <input type="number" id="interestRate"><br><br>
+  <label for="repaymentTime">Repayment Time (in days):</label>
+  <input type="number" id="repaymentTime"><br><br>
+  <label for="accessPhotosContacts">Access to Photos and Contacts (0 for Yes, 1 for No):</label>
+  <input type="number" id="accessPhotosContacts"><br><br>
+  <label for="loanAmount">Loan Amount:</label>
+  <input type="number" id="loanAmount"><br><br>
+  <label for="repaymentDuration">Repayment Duration (in days):</label>
+  <input type="number" id="repaymentDuration"><br><br>
+  <button onclick="calculateLoanPrediction()">Calculate</button><br><br>
+  <p id="recommendation"></p>
 </body>
 </html>
